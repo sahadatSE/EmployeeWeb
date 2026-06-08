@@ -10,7 +10,6 @@
 {
     <div class="alert alert-danger">@ViewBag.Error</div>
 }
-
 <div class="row">
     <div class="col-md-6">
         <form asp-action="Create" method="post">
@@ -39,7 +38,6 @@
         </form>
     </div>
 </div>
-
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
