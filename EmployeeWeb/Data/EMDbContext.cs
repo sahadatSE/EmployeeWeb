@@ -8,7 +8,6 @@ namespace EmployeeWeb.Data
     {
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Admin> Admins { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Admin>().HasData(new Admin
