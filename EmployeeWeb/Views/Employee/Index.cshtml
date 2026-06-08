@@ -1,0 +1,45 @@
+﻿@model List<EmployeeWeb.Models.Employee>
+@{ ViewData["Title"] = "Employees"; }
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Employee List</h2>
+    <a asp-action="Create" class="btn btn-success">+ Add Employee</a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-primary">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model!.Any())
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-muted py-3">No employees found.</td>
+                    </tr>
+                }
+                @foreach (var emp in Model!)
+                {
+                    <tr>
+                        <td>@emp.FirstName</td>
+                        <td>@emp.LastName</td>
+                        <td>@emp.Position</td>
+                        <td>$@emp.Salary.ToString("N2")</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@emp.Id" class="btn btn-info btn-sm">Details</a>
+                            <a asp-action="Edit" asp-route-id="@emp.Id" class="btn btn-warning btn-sm">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@emp.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

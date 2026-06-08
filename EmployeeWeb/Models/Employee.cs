@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EmployeeApp.Models
+namespace EmployeeWeb.Models
 {
     public class Employee
     {
@@ -9,15 +9,15 @@ namespace EmployeeApp.Models
 
         [Required]
         [StringLength(100)]
-        public string FirstName { get; set; } = null!;
+        public string? FirstName { get; set; } 
 
         [Required]
         [StringLength(100)]
-        public string LastName { get; set; } = null!;
+        public string? LastName { get; set; } 
 
         [Required]
         [StringLength(100)]
-        public string Position { get; set; } = null!;
+        public string?   Position { get; set; }
 
         [Required]
         public decimal Salary { get; set; }
