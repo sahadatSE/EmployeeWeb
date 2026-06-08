@@ -42,7 +42,6 @@ namespace EmployeeWeb.Controllers
 
             return View(employee);
         }
-
         [HttpPost]
         public async Task<IActionResult> Edit(Employee employee)
         {
@@ -65,7 +64,6 @@ namespace EmployeeWeb.Controllers
 
             return View(employee);
         }
-
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
